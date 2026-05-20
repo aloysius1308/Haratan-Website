@@ -10,7 +10,6 @@ import {
   HandCoins,
   HeartHandshake,
   Landmark,
-  MapPin,
   ReceiptText,
   ShieldCheck,
   Sparkles,
@@ -85,7 +84,7 @@ export const whyChoose = [
   {
     icon: Clock3,
     title: "20+ Years of Experience",
-    text: "A long-standing remittance and money-changing company strengthening its foundation with today’s technology."
+    text: "A long-standing remittance and money-changing company strengthening its foundation with today's technology."
   },
   {
     icon: ReceiptText,
@@ -265,3 +264,77 @@ export const faqs = [
       "The fastest way is to WhatsApp us. You can also use phone, email, address, and operating hours shown on the Contact Us page."
   }
 ];
+
+// Legal page content. Keep this practical, readable, and review with counsel
+// before treating it as final legal advice.
+export const legalPages = {
+  privacy: {
+    title: "Privacy Policy",
+    intro:
+      "Haratan respects customer privacy and handles personal information with care for remittance, money changing, compliance, and customer support purposes.",
+    sections: [
+      {
+        title: "Information we may collect",
+        body: "We may collect identity details, contact information, transaction details, beneficiary information, supporting documents, source-of-funds information, communications, and records needed to provide services or meet legal and regulatory obligations."
+      },
+      {
+        title: "How information is used",
+        body: "Information may be used to verify identity, process transactions, conduct customer due diligence, screen transactions, respond to enquiries, maintain records, prevent fraud, and comply with applicable laws, banking requirements, and payment partner requirements."
+      },
+      {
+        title: "Sharing and retention",
+        body: "Where necessary, Haratan may share information with banks, payment partners, compliance service providers, regulators, law enforcement agencies, professional advisers, or technology vendors. Records may be retained for business, audit, legal, and regulatory purposes."
+      },
+      {
+        title: "Customer responsibilities",
+        body: "Customers should provide accurate and complete information, notify Haratan of changes, and avoid sending documents or personal data through insecure channels unless requested by our staff."
+      }
+    ]
+  },
+  terms: {
+    title: "Terms & Conditions",
+    intro:
+      "These terms explain the general conditions for using Haratan's public website and enquiring about remittance or money changing services.",
+    sections: [
+      {
+        title: "Indicative information",
+        body: "Rates, fees, delivery timing, and availability shown on this website are indicative only. Final rates, fees, service availability, and processing requirements will be confirmed by Haratan staff before a transaction is processed."
+      },
+      {
+        title: "Transaction processing",
+        body: "Transfers and currency exchange may be subject to identity verification, customer due diligence, transaction screening, receiving bank requirements, payment partner rules, market conditions, and currency stock availability."
+      },
+      {
+        title: "Cancellations and amendments",
+        body: "Cancellation, refund, or amendment requests depend on transaction status, payment partner rules, banking requirements, and compliance checks. Customers should contact Haratan immediately if details are incorrect or if they wish to request a change."
+      },
+      {
+        title: "Customer responsibilities",
+        body: "Customers are responsible for providing complete and accurate sender, beneficiary, transaction, and supporting document information. Incorrect information may cause delays, rejection, additional charges, or failed transactions."
+      }
+    ]
+  },
+  compliance: {
+    title: "Compliance / AML / KYC",
+    intro:
+      "Haratan takes compliance seriously and may perform checks to protect customers, prevent misuse, and meet regulatory and partner requirements.",
+    sections: [
+      {
+        title: "KYC and customer due diligence",
+        body: "Customers may be required to provide identity documents, address details, beneficiary information, source-of-funds information, purpose of transfer, business documents, or other supporting records before a transaction can proceed."
+      },
+      {
+        title: "Transaction monitoring and screening",
+        body: "Haratan may screen transactions, names, beneficiaries, destinations, and payment details. Transactions may be delayed, rejected, cancelled, or reported where required by law, regulation, internal policy, bank requirements, or payment partner requirements."
+      },
+      {
+        title: "Anti-fraud measures",
+        body: "Customers should only transact for lawful purposes and should not send money on behalf of unknown third parties. Haratan may ask additional questions where a transaction appears unusual, incomplete, high risk, or inconsistent with known customer information."
+      },
+      {
+        title: "Processing delays",
+        body: "Processing times depend on destination country, receiving bank, payment partner, operating hours, public holidays, compliance review, and completeness of customer information. Haratan will guide customers where further action is required."
+      }
+    ]
+  }
+};

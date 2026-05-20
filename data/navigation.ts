@@ -8,3 +8,10 @@ export const navigation = [
   { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact-us" }
 ];
+
+// Footer/legal links. These are intentionally not all shown in the top nav.
+export const legalNavigation = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-conditions" },
+  { label: "Compliance / AML / KYC", href: "/compliance-aml-kyc" }
+];

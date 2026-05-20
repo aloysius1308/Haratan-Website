@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
-import { navigation } from "@/data/navigation";
+import { legalNavigation, navigation } from "@/data/navigation";
 import { company } from "@/data/site-content";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container-px mx-auto grid max-w-7xl gap-10 py-14 lg:grid-cols-[1.25fr_0.8fr_0.8fr_1fr]">
         <div>
           <Link href="/" className="inline-flex items-center gap-3">
-            <Image src="/haratan-logo.svg" alt="Haratan logo" width={58} height={28} className="h-8 w-auto rounded bg-white/95 p-1" />
+            <Image src="/haratan-logo.jpeg" alt="Haratan logo" width={42} height={42} className="h-10 w-10 rounded-xl bg-[#10172a] object-contain p-1" />
             <span className="text-lg font-black">Haratan</span>
           </Link>
           <p className="mt-5 max-w-md text-sm leading-7 text-blue-100">
@@ -57,8 +57,11 @@ export default function Footer() {
         <div>
           <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-cyanSoft">Legal</h2>
           <div className="mt-5 grid gap-4 text-sm text-blue-100">
-            <Link href="/rates-fees" className="hover:text-white">Rates disclaimer</Link>
-            <Link href="/remittance" className="hover:text-white">KYC & compliance</Link>
+            {legalNavigation.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-white">
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

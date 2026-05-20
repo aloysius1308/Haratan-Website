@@ -21,12 +21,12 @@ export default function Header() {
       >
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-xl">
           <Image
-            src="/haratan-logo.svg"
+            src="/haratan-logo.jpeg"
             alt="Haratan logo"
-            width={82}
-            height={34}
+            width={48}
+            height={48}
             priority
-            className="h-10 w-auto object-contain"
+            className="h-12 w-12 rounded-2xl bg-[#10172a] object-contain p-1 shadow-sm"
           />
           <span className="text-xl font-black tracking-normal text-navy-950">
             Haratan
