@@ -3,7 +3,7 @@ import { Mail, MapPin, MessageCircle, Phone, Timer } from "lucide-react";
 import ButtonLink from "@/components/ButtonLink";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
-import { site } from "@/lib/site-data";
+import { company } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 
 const contactItems = [
   { icon: MessageCircle, title: "WhatsApp", value: "WhatsApp Haratan" },
-  { icon: Phone, title: "Phone", value: site.phone },
-  { icon: Mail, title: "Email", value: site.email },
-  { icon: MapPin, title: "Address", value: site.address },
-  { icon: Timer, title: "Operating hours", value: site.hours }
+  { icon: Phone, title: "Office Phone", value: company.phone },
+  { icon: MessageCircle, title: "WhatsApp", value: company.whatsapp },
+  { icon: Mail, title: "Email", value: company.email },
+  { icon: MapPin, title: "Address", value: company.address },
+  { icon: Timer, title: "Operating hours", value: company.hours }
 ];
 
 export default function ContactUsPage() {
@@ -37,7 +38,7 @@ export default function ContactUsPage() {
               title="Fastest response is through WhatsApp"
               text="Send us your enquiry and our staff can guide you on the next step. Replace the placeholders below with Haratan's confirmed contact details before launch."
             />
-            <ButtonLink href={site.whatsappUrl} className="mt-8">
+            <ButtonLink href={company.whatsappUrl} className="mt-8">
               WhatsApp Us
               <MessageCircle className="h-5 w-5" />
             </ButtonLink>
@@ -72,8 +73,8 @@ export default function ContactUsPage() {
                   Google Maps placeholder
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-7 text-slate-600">
-                  Add the confirmed Haratan Google Maps embed once the public
-                  location link is ready.
+                  Interactive map will be displayed here for the City Plaza
+                  branch once the public Google Maps embed is connected.
                 </p>
               </div>
             </div>

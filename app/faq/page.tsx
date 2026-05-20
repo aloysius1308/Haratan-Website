@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import FAQList from "@/components/FAQList";
 import PageHero from "@/components/PageHero";
-import { faqs } from "@/lib/site-data";
+import { faqs } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "FAQ",

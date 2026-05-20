@@ -6,17 +6,16 @@ type PageHeroProps = {
 
 export default function PageHero({ eyebrow, title, text }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,#d8f5ff_0,#f7fbff_36%,#ffffff_76%)]">
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-navy-900 via-navy-700 to-cyanSoft" />
-      <div className="container-px mx-auto max-w-7xl py-16 sm:py-20 lg:py-24">
-        <div className="max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-navy-700">
+    <section className="relative overflow-hidden bg-white">
+      <div className="container-px grid-bg mx-auto max-w-7xl py-20 text-center sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-4xl">
+          <p className="mx-auto inline-flex rounded-full border border-blue-200 bg-blue-50 px-5 py-2 text-sm font-bold text-blue-600">
             {eyebrow}
           </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-navy-950 sm:text-5xl">
+          <h1 className="mt-7 text-5xl font-semibold leading-tight tracking-normal text-slate-950 sm:text-6xl lg:text-7xl">
             {title}
           </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">{text}</p>
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-slate-600">{text}</p>
         </div>
       </div>
     </section>

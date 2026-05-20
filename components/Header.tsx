@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navItems, site } from "@/lib/site-data";
+import { company } from "@/data/site-content";
+import { navigation } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
@@ -18,27 +20,27 @@ export default function Header() {
         aria-label="Main navigation"
       >
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-xl">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-navy-900 text-lg font-black text-white">
-            H
-          </span>
-          <span>
-            <span className="block text-lg font-black leading-5 text-navy-950">
-              Haratan
-            </span>
-            <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">
-              Servicing Pte Ltd
-            </span>
+          <Image
+            src="/haratan-logo.svg"
+            alt="Haratan logo"
+            width={82}
+            height={34}
+            priority
+            className="h-10 w-auto object-contain"
+          />
+          <span className="text-xl font-black tracking-normal text-navy-950">
+            Haratan
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
+        <div className="hidden items-center gap-1 xl:flex">
+          {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "focus-ring rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition hover:bg-navy-50 hover:text-navy-900",
-                pathname === item.href && "bg-navy-50 text-navy-900"
+                "focus-ring rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition hover:bg-blue-50 hover:text-blue-700",
+                pathname === item.href && "bg-blue-50 text-blue-700"
               )}
             >
               {item.label}
@@ -46,10 +48,10 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <a
-            href={site.whatsappUrl}
-            className="focus-ring inline-flex items-center gap-2 rounded-full bg-navy-800 px-5 py-3 text-sm font-bold text-white shadow-card transition hover:bg-navy-900"
+            href={company.whatsappUrl}
+            className="focus-ring inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-blue-700"
             target="_blank"
             rel="noreferrer"
           >
@@ -60,7 +62,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-navy-950 lg:hidden"
+          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-navy-950 xl:hidden"
           aria-label="Open menu"
           onClick={() => setOpen((value) => !value)}
         >
@@ -69,15 +71,15 @@ export default function Header() {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="border-t border-slate-200 bg-white xl:hidden">
           <div className="container-px mx-auto grid max-w-7xl gap-2 py-4">
-            {navItems.map((item) => (
+            {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "rounded-2xl px-4 py-3 text-base font-bold text-slate-700",
-                  pathname === item.href && "bg-navy-50 text-navy-950"
+                  pathname === item.href && "bg-blue-50 text-blue-700"
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -85,8 +87,8 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={site.whatsappUrl}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-navy-800 px-5 py-3 text-base font-bold text-white"
+              href={company.whatsappUrl}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-base font-bold text-white"
               target="_blank"
               rel="noreferrer"
             >

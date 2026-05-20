@@ -7,10 +7,12 @@ import {
   type LucideIcon
 } from "lucide-react";
 import ButtonLink from "@/components/ButtonLink";
+import CalculatorCard from "@/components/CalculatorCard";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import RatesGrid from "@/components/RatesGrid";
 import SectionHeader from "@/components/SectionHeader";
-import { site } from "@/lib/site-data";
+import { company } from "@/data/site-content";
 
 const feeCards: Array<{
   icon: LucideIcon;
@@ -97,10 +99,39 @@ export default function RatesFeesPage() {
             </div>
           </div>
 
-          <ButtonLink href={site.whatsappUrl} className="mt-10">
+          <ButtonLink href={company.whatsappUrl} className="mt-10">
             Ask for latest rates
             <ArrowRight className="h-5 w-5" />
           </ButtonLink>
+        </div>
+      </section>
+
+      <section className="section-y bg-slate-50">
+        <div className="container-px mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Calculators"
+            title="Estimate remittance and cash exchange separately"
+            text="Remittance and money changer services are different. These tools keep the customer journey clear."
+          />
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <CalculatorCard mode="remittance" />
+            <CalculatorCard mode="money-changer" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-px mx-auto max-w-7xl">
+          <SectionHeader eyebrow="Our Rates" title="Remittance Rates" text="Indicative send rates for overseas transfers." />
+          <div className="mt-10">
+            <RatesGrid type="remittance" />
+          </div>
+          <div className="mt-16">
+            <SectionHeader eyebrow="Cash Rates" title="Money Changer Rates" text="Indicative buy and sell cash rates for walk-in exchange." />
+          </div>
+          <div className="mt-10">
+            <RatesGrid type="money-changer" />
+          </div>
         </div>
       </section>
 

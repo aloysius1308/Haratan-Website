@@ -1,27 +1,12 @@
 import type { Metadata } from "next";
-import {
-  ArrowRight,
-  Building2,
-  HeartHandshake,
-  ShieldCheck,
-  type LucideIcon
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ButtonLink from "@/components/ButtonLink";
 import CTASection from "@/components/CTASection";
-import InfoGrid from "@/components/InfoGrid";
+import JourneyTimeline from "@/components/JourneyTimeline";
+import MetricCards from "@/components/MetricCards";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
-import { aboutValues, site } from "@/lib/site-data";
-
-const proofCards: Array<[string, string, LucideIcon]> = [
-  ["Singapore-based", "Local service for practical customer needs.", Building2],
-  ["Trust-focused", "KYC, screening, and responsible processing.", ShieldCheck],
-  [
-    "Community-minded",
-    "Friendly support for families and businesses.",
-    HeartHandshake
-  ]
-];
+import { aboutStory, company, whyChoose } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -34,8 +19,8 @@ export default function AboutUsPage() {
     <>
       <PageHero
         eyebrow="About Haratan"
-        title="A modern Singapore financial services team with a human touch"
-        text="Haratan Servicing Pte Ltd helps customers send money overseas and exchange foreign currencies safely, conveniently, and with clear support from our staff."
+        title={aboutStory.headline}
+        text={aboutStory.intro}
       />
 
       <section className="section-y bg-white">
@@ -43,12 +28,17 @@ export default function AboutUsPage() {
           <div>
             <SectionHeader
               align="left"
-              eyebrow="Who We Are"
-              title="Built for everyday customers, migrant workers, and business payments"
-              text="Haratan serves walk-in customers, Indonesian communities in Singapore, business customers, and existing remittance customers who want a trusted provider for overseas money movement."
+              eyebrow="Our Story"
+              title="Built from real customer needs"
+              text={aboutStory.paragraphs[0]}
             />
+            <div className="mt-6 grid gap-4 text-base leading-8 text-slate-600">
+              {aboutStory.paragraphs.slice(1).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={site.whatsappUrl}>
+              <ButtonLink href={company.whatsappUrl}>
                 WhatsApp Us
                 <ArrowRight className="h-5 w-5" />
               </ButtonLink>
@@ -57,34 +47,26 @@ export default function AboutUsPage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {proofCards.map(([title, text, Icon]) => (
-              <div
-                key={title}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
-              >
-                <Icon className="h-8 w-8 text-navy-800" />
-                <h2 className="mt-8 text-xl font-bold text-navy-950">
-                  {title}
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {text}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MetricCards />
         </div>
       </section>
 
       <section className="section-y bg-slate-50">
         <div className="container-px mx-auto max-w-7xl">
           <SectionHeader
-            eyebrow="Our Approach"
-            title="Professional service without the old-school money changer feel"
-            text="Haratan is designed to feel clear, modern, and dependable while keeping the customer experience simple."
+            eyebrow="Our Journey"
+            title="Over two decades of evolution and growth"
+            text="A modern timeline keeps Haratan’s real company story visible without turning the page into a heavy paragraph."
           />
-          <div className="mt-10">
-            <InfoGrid items={aboutValues} />
+          <JourneyTimeline />
+          <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {whyChoose.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
+                <Icon className="h-7 w-7 text-blue-600" />
+                <h3 className="mt-5 text-xl font-semibold text-slate-950">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

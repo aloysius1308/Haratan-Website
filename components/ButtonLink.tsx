@@ -19,7 +19,7 @@ export default function ButtonLink({
   const classes = cn(
     "focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-bold transition",
     variant === "primary" &&
-      "bg-navy-800 text-white shadow-soft hover:bg-navy-900",
+      "bg-blue-600 text-white shadow-soft hover:-translate-y-0.5 hover:bg-blue-700",
     variant === "secondary" &&
       "border border-navy-200 bg-white text-navy-900 hover:border-navy-400 hover:bg-navy-50",
     variant === "light" &&

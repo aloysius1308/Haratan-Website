@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { ArrowRight, Banknote, Clock3, Coins, RefreshCcw } from "lucide-react";
 import ButtonLink from "@/components/ButtonLink";
+import CalculatorCard from "@/components/CalculatorCard";
 import CTASection from "@/components/CTASection";
 import InfoGrid from "@/components/InfoGrid";
 import PageHero from "@/components/PageHero";
+import RatesGrid from "@/components/RatesGrid";
 import SectionHeader from "@/components/SectionHeader";
-import { site } from "@/lib/site-data";
+import { company } from "@/data/site-content";
 
 export const metadata: Metadata = {
   title: "Money Changer",
@@ -67,11 +69,36 @@ export default function MoneyChangerPage() {
                   for your exchange.
                 </p>
               </div>
-              <ButtonLink href={site.whatsappUrl} variant="light">
+              <ButtonLink href={company.whatsappUrl} variant="light">
                 WhatsApp Us
                 <ArrowRight className="h-5 w-5" />
               </ButtonLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-slate-50">
+        <div className="container-px mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <SectionHeader
+            align="left"
+            eyebrow="Cash Exchange Estimate"
+            title="Money changer calculator"
+            text="For physical cash exchange, availability and final buy/sell rates are confirmed by staff before you visit or transact."
+          />
+          <CalculatorCard mode="money-changer" />
+        </div>
+      </section>
+
+      <section className="section-y bg-white">
+        <div className="container-px mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Money Changer Rates"
+            title="Indicative cash buy and sell rates"
+            text="Rates are subject to market movement and currency stock availability."
+          />
+          <div className="mt-12">
+            <RatesGrid type="money-changer" />
           </div>
         </div>
       </section>

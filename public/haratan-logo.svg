@@ -1,0 +1,10 @@
+<svg width="220" height="92" viewBox="0 0 220 92" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Haratan Servicing Pte Ltd logo</title>
+  <rect width="220" height="92" rx="18" fill="white"/>
+  <g transform="translate(10 6)">
+    <path d="M13 12H31V36L58 12H83L49 42L85 78H60L31 49V78H13V12Z" fill="#3157C8"/>
+    <path d="M78 14C92 8 113 8 124 19C129 24 131 30 131 39H113C112 34 110 31 106 29C100 25 88 25 83 31C79 36 83 40 91 42L104 45C123 50 133 58 130 72C127 88 102 95 80 86C66 80 58 70 57 55H76C77 63 82 68 91 70C100 73 111 71 113 65C115 60 111 57 101 55L88 52C71 48 62 39 66 27C68 21 72 17 78 14Z" fill="#3157C8"/>
+    <path d="M7 74C21 34 63 7 111 4C142 2 161 13 164 31C166 44 157 57 142 64" stroke="#3157C8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M164 24C155 49 129 69 96 77C62 85 30 83 13 70C4 63 4 54 10 44" stroke="#3157C8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

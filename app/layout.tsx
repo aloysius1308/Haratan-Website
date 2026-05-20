@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { company } from "@/data/site-content";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,8 +16,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://haratan.com.sg"),
   title: {
-    default: "Haratan Servicing Pte Ltd | Remittance & Money Changer Singapore",
-    template: "%s | Haratan Servicing Pte Ltd"
+    default: `${company.name} | Remittance & Money Changer Singapore`,
+    template: `%s | ${company.name}`
   },
   description:
     "Singapore-based remittance and money changing services for personal, Indonesian corridor, and business overseas payments.",
@@ -28,11 +29,11 @@ export const metadata: Metadata = {
     "business overseas payments"
   ],
   openGraph: {
-    title: "Haratan Servicing Pte Ltd",
+    title: company.name,
     description:
       "Fast, reliable remittance and currency exchange services in Singapore.",
     url: "https://haratan.com.sg",
-    siteName: "Haratan Servicing Pte Ltd",
+    siteName: company.name,
     locale: "en_SG",
     type: "website"
   },
